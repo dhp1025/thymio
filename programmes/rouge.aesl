@@ -1,0 +1,46 @@
+<!DOCTYPE aesl-source>
+<network>
+
+
+<!--list of global events-->
+<event size="1" name="pair_run"/>
+
+
+<!--list of constants-->
+
+
+<!--show keywords state-->
+<keywords flag="true"/>
+
+
+<!--node thymio-II-->
+<node nodeId="38982" name="thymio-II"># reset outputs
+call sound.system(-1)
+call leds.top(0,0,0)
+call leds.bottom.left(0,0,0)
+call leds.bottom.right(0,0,0)
+call leds.circle(0,0,0,0,0,0,0,0)
+
+onevent buttons
+	when button.center == 1 do
+		call leds.top(32,0,0)
+		emit pair_run 0
+	end
+
+<toolsPlugins>
+<ThymioVisualProgramming>
+<vplroot xml-format-version="1">
+<program advanced_mode="0">
+<set>
+<block value0="0" value1="0" value2="0" value3="0" value4="1" value5="0" value6="0" type="event" name="button"/>
+<block value0="32" value1="0" value2="0" type="action" name="colortop"/>
+</set>
+<set/>
+</program>
+</vplroot>
+</ThymioVisualProgramming>
+</toolsPlugins>
+</node>
+
+
+</network>
