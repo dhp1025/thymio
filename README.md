@@ -1,1 +1,3 @@
-# thymio
+# Programmation avec Thymio
+
+Mes programmes.
